@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="What moves to do to get one face of a Rubik's cube to look like this?"
+        />
+
+        <title>Rubik's Faces</title>
+
+        <link href="/favicon.svg" rel="icon" />
+        <link href="/favicon.png" rel="icon" />
+        <link href="/favicon.ico" rel="icon" />
+        <link href="style.css" rel="stylesheet" />
+
+        <style id="defineColours"></style>
+
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <h1>Rubik's Faces</h1>
+
+        <div style="display: flex; flex-direction: row; gap: 2rem">
+            <div>
+                <table>
+                    <tr>
+                        <td onClick="changeStickerColour(0)"></td>
+                        <td onClick="changeStickerColour(1)"></td>
+                        <td onClick="changeStickerColour(2)"></td>
+                    </tr>
+                    <tr>
+                        <td onClick="changeStickerColour(3)"></td>
+                        <td onClick="changeStickerColour(4)"></td>
+                        <td onClick="changeStickerColour(5)"></td>
+                    </tr>
+                    <tr>
+                        <td onClick="changeStickerColour(6)"></td>
+                        <td onClick="changeStickerColour(7)"></td>
+                        <td onClick="changeStickerColour(8)"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <svg
+                width="142"
+                height="142"
+                viewBox="-2 18 284 284"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                style="
+                    stroke: #000;
+                    stroke-width: 2;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                "
+            >
+                <rect
+                    onClick="setColour('orange')"
+                    class="orange"
+                    width="120"
+                    height="120"
+                    x="160"
+                    y="20"
+                />
+                <rect
+                    onClick="setColour('red')"
+                    class="red"
+                    width="120"
+                    height="120"
+                    x="60"
+                    y="120"
+                />
+                <path
+                    onClick="setColour('blue')"
+                    class="blue"
+                    d="m 220,80 v 120 l -40,40 V 120 l 40,-40"
+                />
+                <path
+                    onClick="setColour('green')"
+                    class="green"
+                    d="m 40,80 v 120 l -40,40 V 120 l 40,-40"
+                />
+                <path
+                    onClick="setColour('white')"
+                    class="white"
+                    d="m 220,80 -40,40 H 60 l 40,-40 z"
+                />
+                <path
+                    onClick="setColour('yellow')"
+                    class="yellow"
+                    d="m 220,260 -40,40 H 60 l 40,-40 z"
+                />
+            </svg>
+        </div>
+
+        <ul>
+            <li>Click the stickers to change their colour.</li>
+            <li>Click the faces to change their colour.</li>
+        </ul>
+
+        <div style="margin-top: 1rem; margin-bottom: 1rem">
+            Start by holding your cube&nbsp;
+            <div class="colour white"></div>
+            &nbsp;up,&nbsp;
+            <div class="colour red"></div>
+            &nbsp;towards you, and&nbsp;
+            <div class="colour blue"></div>
+            &nbsp;to the right. Then:
+        </div>
+
+        <p id="path"></p>
+        <p id="whereIsTheFace"></p>
+
+        <hr />
+        <p>
+            <i>
+                This page last changed Feb 20 2023; created Jan 21 2023;
+                <a target="_blank" href="https://github.com/jkoop/rubiks-faces"
+                    >source on GitHub</a
+                >;
+            </i>
+        </p>
+    </body>
+</html>
